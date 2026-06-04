@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KANTO Café — Retro Summer Menu</title>
+  <meta name="description" content="KANTO café animated retro summer one-page menu." />
+  <link rel="preload" href="assets/backgrounds/paper-texture.svg" as="image" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="palm-shadow palm-shadow-a" aria-hidden="true"></div>
+  <div class="palm-shadow palm-shadow-b" aria-hidden="true"></div>
+
+  <header class="site-header" id="home">
+    <a class="brand" href="#top" aria-label="KANTO home">
+      <img src="assets/logo/kanto-logo.png" alt="KANTO" />
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#top">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#good-vibes">Good Vibes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="mini-ticket" href="#menu">Explore</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-collage" aria-hidden="true">
+        <img class="doodle doodle-sun" src="assets/elements/sun.svg" alt="" />
+        <img class="doodle doodle-birds" src="assets/elements/birds.svg" alt="" />
+        <img class="doodle doodle-waves" src="assets/elements/waves.svg" alt="" />
+        <img class="prop prop-ticket" src="assets/elements/ticket.svg" alt="" data-parallax="0.13" />
+        <img class="prop prop-cassette" src="assets/elements/cassette.svg" alt="" data-parallax="0.09" />
+        <img class="prop prop-postcard" src="assets/elements/postcard.svg" alt="" data-parallax="0.16" />
+        <img class="prop prop-sunglasses" src="assets/elements/sunglasses.svg" alt="" data-parallax="0.2" />
+        <img class="prop prop-stamp" src="assets/elements/stamp.svg" alt="" data-parallax="0.11" />
+      </div>
+
+      <div class="hero-store reveal" data-parallax="0.05">
+        <div class="store-sticker">
+          <img src="assets/elements/kanto-storefront.png" alt="KANTO café storefront illustration" class="storefront-icon" />
+        </div>
+      </div>
+
+      <div class="hero-copy reveal">
+        <p class="eyebrow">KANTO Summer Menu</p>
+        <h1 id="hero-title">LESS RUSH.<br />MORE KANTO.</h1>
+        <p class="hero-subline">Retro ends. Summer begins.</p>
+        <p class="hero-text">Savor the sun, feel the breeze, and make every sip a good vibe.</p>
+        <a class="stamp-button" href="#menu">Explore Menu</a>
+      </div>
+
+      <div class="hero-drink reveal" data-parallax="0.06">
+        <span class="sun-ring" aria-hidden="true"></span>
+        <img src="assets/drinks/kold-coffee.png" alt="KANTO iced coffee cup" class="featured-cup" />
+      </div>
+    </section>
+
+    <section class="vibe-strip" id="good-vibes" aria-label="KANTO slogan ticker">
+      <div class="ticker">
+        <span>GOOD COFFEE. GOOD VIBES.</span>
+        <span>LESS RUSH. MORE KANTO.</span>
+        <span>RETRO ENDS. SUMMER BEGINS.</span>
+        <span>GOOD COFFEE. GOOD VIBES.</span>
+        <span>LESS RUSH. MORE KANTO.</span>
+        <span>RETRO ENDS. SUMMER BEGINS.</span>
+      </div>
+    </section>
+
+    <section class="category-dock" aria-labelledby="category-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Quick Jump</p>
+        <h2 id="category-title">Choose your summer mood</h2>
+      </div>
+      <div class="ticket-tabs" id="categoryTabs" aria-label="Menu categories"></div>
+    </section>
+
+    <section class="menu-stage" id="menu" aria-labelledby="menu-title">
+      <div class="section-heading reveal menu-heading">
+        <p class="eyebrow">Full Menu</p>
+        <h2 id="menu-title">A postcard menu, not a boring list.</h2>
+      </div>
+      <div class="menu-flow" id="menuFlow"></div>
+    </section>
+  </main>
+
+  <footer class="footer-postcard" id="contact">
+    <div class="footer-inner reveal">
+      <img src="assets/logo/kanto-logo.png" alt="KANTO" class="footer-logo" />
+      <div>
+        <h2>GOOD COFFEE. GOOD VIBES.</h2>
+        <p>LESS RUSH. MORE KANTO.</p>
+      </div>
+      <div class="socials" aria-label="Social links">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+        <a href="#" aria-label="WhatsApp">WA</a>
+        <a href="#" aria-label="Location">MAP</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">TOP</button>
+  <script src="script.js"></script>
+</body>
+</html>
