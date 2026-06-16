@@ -219,3 +219,268 @@ h2{font-size:clamp(38px, 5.6vw, 76px)}
     box-shadow: 0 14px 28px rgba(83,35,16,.12);
   }
 }
+
+/* KANTO Retro 97 launch category */
+.ticket-tab.new-tab{
+  position:relative;
+  padding-right:58px;
+  background:rgba(255,238,195,.9);
+  border-width:2.2px;
+}
+.tab-new-label{
+  position:absolute;
+  top:-10px;
+  right:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:4px 8px 3px;
+  min-width:42px;
+  border:1.7px solid var(--paper-light);
+  border-radius:999px;
+  background:var(--burgundy);
+  color:var(--paper-light);
+  font-family:Impact,"Arial Narrow Bold",sans-serif;
+  font-size:11px;
+  letter-spacing:.09em;
+  line-height:1;
+  transform:rotate(-7deg);
+  box-shadow:3px 4px 0 rgba(50,23,24,.16);
+}
+.retro-new-card{
+  grid-column:span 8;
+}
+.retro-new-card .menu-box{
+  background:
+    radial-gradient(circle at 8% 10%, rgba(255,247,226,.72), transparent 32%),
+    repeating-linear-gradient(-6deg, rgba(153,19,25,.045) 0 12px, transparent 12px 24px),
+    rgba(247,226,185,.62);
+  border-width:2px;
+}
+.retro-new-card .menu-box::after{
+  opacity:.2;
+  transform:rotate(-10deg) scale(1.08);
+}
+.new-ribbon{
+  position:absolute;
+  top:22px;
+  right:24px;
+  z-index:4;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 14px 7px;
+  color:var(--paper-light);
+  background:var(--burgundy);
+  border:2px solid var(--burgundy-dark);
+  font-family:Impact,"Arial Narrow Bold",sans-serif;
+  letter-spacing:.12em;
+  line-height:1;
+  text-transform:uppercase;
+  clip-path:polygon(0 0,100% 0,100% 34%,91% 50%,100% 66%,100% 100%,0 100%,0 66%,9% 50%,0 34%);
+  transform:rotate(6deg);
+  box-shadow:6px 7px 0 rgba(109,13,18,.18);
+}
+.item-desc{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-family:Georgia,serif;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.32;
+  letter-spacing:0;
+  direction:rtl;
+  text-align:left;
+}
+.menu-item.has-desc{
+  align-items:start;
+}
+.menu-item.has-desc .dots{
+  margin-top:14px;
+}
+.menu-item.has-desc .price{
+  padding-top:1px;
+}
+
+@media (max-width:920px){
+  .retro-new-card{grid-column:auto}
+  .new-ribbon{top:104px; right:18px; transform:rotate(5deg) scale(.92)}
+  .ticket-tab.new-tab{padding-right:56px}
+}
+
+@media (max-width:560px){
+  .new-ribbon{top:92px; right:14px; font-size:12px; padding:7px 12px 6px}
+  .item-desc{font-size:12px}
+}
+
+
+/* ===== KANTO desktop polish + Retro 97 featured category ===== */
+.ticket-tab .tab-title{
+  position:relative;
+  z-index:2;
+}
+.ticket-tab.new-tab{
+  color:var(--burgundy);
+}
+.ticket-tab.new-tab.active{
+  background:var(--burgundy);
+  color:var(--paper-light);
+  border-color:var(--burgundy-dark);
+  box-shadow:7px 8px 0 rgba(109,13,18,.18);
+}
+.ticket-tab.new-tab.active .tab-new-label{
+  background:var(--paper-light);
+  color:var(--burgundy);
+  border-color:var(--burgundy-dark);
+}
+.category-subtitle{
+  position:relative;
+  z-index:3;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin:-10px 0 20px;
+  padding:7px 12px 6px;
+  border:1px dashed rgba(153,19,25,.38);
+  border-radius:999px;
+  color:var(--burgundy-dark);
+  background:rgba(255,247,226,.58);
+  font-family:Georgia,serif;
+  font-size:14px;
+  font-style:italic;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+.category-subtitle::before,
+.category-subtitle::after{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--burgundy);
+  opacity:.55;
+}
+.retro-new-card .card-kicker{
+  color:var(--burgundy-dark);
+  font-weight:800;
+}
+.retro-new-card h3{
+  color:var(--burgundy);
+  text-shadow:2px 2px 0 rgba(255,247,226,.78), 0 8px 22px rgba(109,13,18,.10);
+}
+.retro-new-card .menu-box::before{
+  border:1.5px dashed rgba(153,19,25,.34);
+}
+.item-desc{
+  direction:ltr;
+  text-align:left;
+  color:#6f4b42;
+}
+.menu-item .name{
+  min-width:0;
+}
+
+@media (min-width:921px){
+  .menu-stage{
+    width:min(1120px, calc(100% - 44px));
+  }
+  .menu-flow{
+    display:flex;
+    flex-direction:column;
+    gap:46px;
+    padding:10px 0 90px;
+  }
+  .menu-card,
+  .menu-card:nth-child(3n+1),
+  .menu-card:nth-child(3n+2),
+  .menu-card:nth-child(4n),
+  .retro-new-card{
+    grid-column:unset;
+    width:100%;
+    min-height:auto;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) clamp(210px,24vw,310px);
+    align-items:stretch;
+    gap:0;
+    transform:none !important;
+  }
+  .menu-card.reverse{
+    grid-template-columns:minmax(0,1fr) clamp(210px,24vw,310px);
+  }
+  .menu-card.reverse .menu-box{
+    grid-column:1;
+  }
+  .menu-card.reverse .menu-figure{
+    grid-column:2;
+    justify-self:center;
+    margin-right:0;
+    margin-left:0;
+  }
+  .menu-box{
+    min-height:360px;
+    padding:38px clamp(28px,4vw,54px);
+  }
+  .menu-figure{
+    align-self:center;
+    justify-self:center;
+    margin-left:0;
+  }
+  .card-drink{
+    width:min(270px,100%);
+  }
+  .menu-card h3{
+    font-size:clamp(40px,4.2vw,62px);
+    margin-bottom:20px;
+  }
+  .menu-card ul{
+    max-width:100%;
+    gap:13px;
+  }
+  .menu-item{
+    grid-template-columns:minmax(160px,360px) minmax(40px,1fr) auto;
+    gap:12px;
+  }
+  .menu-item.has-desc{
+    grid-template-columns:minmax(210px,340px) minmax(40px,1fr) auto;
+  }
+  .retro-new-card .menu-box{
+    min-height:430px;
+    padding-top:44px;
+    background:
+      radial-gradient(circle at 8% 10%, rgba(255,247,226,.78), transparent 32%),
+      radial-gradient(circle at 88% 18%, rgba(153,19,25,.12), transparent 24%),
+      repeating-linear-gradient(-6deg, rgba(153,19,25,.05) 0 12px, transparent 12px 24px),
+      rgba(247,226,185,.72);
+    border:2px solid rgba(153,19,25,.62);
+  }
+  .new-ribbon{
+    top:24px;
+    right:26px;
+  }
+}
+
+@media (max-width:920px){
+  .category-subtitle{
+    margin:-8px 0 18px;
+    font-size:13px;
+  }
+  .retro-new-card h3{
+    color:var(--burgundy);
+  }
+}
+
+@media (max-width:560px){
+  .category-subtitle{
+    max-width:100%;
+    justify-content:center;
+    font-size:12px;
+    padding:6px 10px;
+  }
+  .ticket-tab.new-tab{
+    padding-right:54px;
+  }
+  .tab-new-label{
+    right:6px;
+  }
+}

@@ -1,4 +1,21 @@
 const menuData = [
+  {
+    id:'kanto-retro-97',
+    title:'Kanto Retro 97',
+    image:'mix-match.webp',
+    doodle:'cassette.svg',
+    isNew:true,
+    kicker:'New retro drop',
+    subtitle:'Signature Summer Collection',
+    items:[
+['Retro Pop 97','100 LE','Mango Boba - Chocolate - Blueberry'],
+['Sunset Cassette','100 LE','Passion Fruit - Mango - Vanilla - Coconut - Lemon'],
+['Peach Ride 97','100 LE','Passion Fruit - Pineapple - Peach - Vanilla'],
+['Old Melon Vibe','100 LE','Cantaloupe - Vanilla'],
+['Blue Radio 97','90 LE','Passion Fruit - Blueberry'],
+['Kanto 97','120 LE','White Pistachio Milkshake'],
+['Walkman Mix','100 LE','Kiwi - Pineapple - Banana']    ]
+  },
   { id:'kold-coffee', title:'Kold Coffee', image:'kold-coffee.webp', doodle:'waves.svg', items:[['Iced Latte','75 LE'],['Iced Latte Hazelnut / Vanilla','90 LE'],['Iced Spanish Latte','95 LE'],['Iced Dark Mocha','100 LE'],['Iced White Mocha','110 LE'],['Iced Caramel','90 LE'],['Iced Salted Caramel','95 LE'],['Iced Americano','70 LE']]},
 { id:'hot-coffee', title:'Hot Coffee', image:'hot-coffee.webp', doodle:'camera.svg', items:[['Turkish Coffee','40 LE'],['French Coffee','55 LE'],['Hazelnut Coffee','55 LE'],['Nutella Coffee','55 LE'],['Caramel Coffee','55 LE'],['Espresso S/D','40-55 LE'],['Macchiato','50-60 LE'],['Latte','70 LE'],['Spanish Latte','90 LE'],['Cappuccino','70 LE'],['White Mocha','95 LE'],['Dark Mocha','90 LE'],['Flat White','60 LE'],['Cortado','60 LE'],['Nescafé M/L','55-65 LE']]},
 { id:'frappee', title:'Frappee', image:'frappee.webp', doodle:'sun.svg', items:[['Frappe Latte','75 LE'],['Frappe Caramel','95 LE'],['Frappe White Mocha','115 LE'],['Frappe Dark Mocha','100 LE'],['Frappe Vanil','95 LE'],['Spanish Frappe','105 LE']]},
@@ -18,21 +35,23 @@ const tilts = ['-1.2deg','1deg','-.45deg','1.4deg','-.8deg','.65deg'];
 
 menuData.forEach((cat, index) => {
   const button = document.createElement('button');
-  button.className = 'ticket-tab';
-  button.textContent = cat.title;
+  button.className = `ticket-tab ${cat.isNew ? 'new-tab' : ''}`;
+  button.innerHTML = `<span class="tab-title">${cat.title}</span>${cat.isNew ? '<span class="tab-new-label">NEW</span>' : ''}`;
   button.dataset.target = cat.id;
   button.style.transitionDelay = `${Math.min(index * 35, 280)}ms`;
   tabs.appendChild(button);
 
   const card = document.createElement('article');
-  card.className = `menu-card reveal ${index % 2 ? 'reverse' : ''}`;
+  card.className = `menu-card reveal ${index % 2 ? 'reverse' : ''} ${cat.isNew ? 'retro-new-card' : ''}`;
   card.id = cat.id;
   card.style.setProperty('--tilt', tilts[index % tilts.length]);
   card.innerHTML = `
     <div class="menu-box">
-      <p class="card-kicker">Summer ticket ${String(index+1).padStart(2,'0')}</p>
+      ${cat.isNew ? '<span class="new-ribbon">NEW DROP</span>' : ''}
+      <p class="card-kicker">${cat.kicker || `Summer ticket ${String(index+1).padStart(2,'0')}`}</p>
       <h3>${cat.title}</h3>
-      <ul>${cat.items.map(([name, price]) => `<li class="menu-item"><span class="name">${name}</span><span class="dots"></span><span class="price">${price}</span></li>`).join('')}</ul>
+      ${cat.subtitle ? `<p class="category-subtitle">${cat.subtitle}</p>` : ''}
+      <ul>${cat.items.map(([name, price, desc]) => `<li class="menu-item ${desc ? 'has-desc' : ''}"><span class="name">${name}${desc ? `<small class="item-desc">${desc}</small>` : ''}</span><span class="dots"></span><span class="price">${price}</span></li>`).join('')}</ul>
       <img class="card-doodle" src="assets/elements/${cat.doodle}" alt="" aria-hidden="true">
       <img class="card-doodle alt" src="assets/elements/birds.svg" alt="" aria-hidden="true">
     </div>
